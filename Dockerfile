@@ -31,11 +31,14 @@ COPY ./baseq3 /ioquake3/ioquake3/baseq3
 
 # Copiar el script y los archivos de configuracion
 COPY start_server.sh /ioquake3/start_server.sh
-COPY server.cfg /ioquake3/server.cfg
-COPY levels.cfg /ioquake3/levels.cfg
+
+RUN mkdir -p /ioquake3/ioquake3/config
+
+COPY server.cfg /ioquake3/ioquake3/config/server.cfg
+COPY levels.cfg /ioquake3/ioquake3/config/levels.cfg
 
 # Dejar el script para ejecutar el servidor como ejecutable.
-RUN chmod +x /ioquake3/start_server.sh
+#RUN chmod +x /ioquake3/start_server.sh
 
 # Dejar el punto de entrada por defecto de la imagen como el script
 # para ejecutar el servidor.

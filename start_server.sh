@@ -10,5 +10,6 @@
 	+set sv_allowDownload 1 \
 	+set sv_dlURL \"\" \
 	+set com_hunkmegs 64 "$@" \
+	+set fs_game config \
 	+exec server.cfg \
 	+exec levels.cfg
