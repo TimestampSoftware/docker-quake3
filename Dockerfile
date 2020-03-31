@@ -21,10 +21,6 @@ USER ioquake3
 RUN curl https://raw.githubusercontent.com/ioquake/ioq3/master/misc/linux/server_compile.sh \
 	-o /ioquake3/server_compile.sh
 
-# Bajar el script para ejecutar el servidor.
-RUN curl https://raw.githubusercontent.com/ioquake/ioq3/master/misc/linux/start_server.sh \
-	-o /ioquake3/start_server.sh
-
 # Compilar el servidor. Hay que ejecutar yes y mandar su salida
 # al script de compilacion para confirmar los dialogos que manda.
 RUN cd /ioquake3/ && chmod +x ./server_compile.sh && \
@@ -32,6 +28,11 @@ RUN cd /ioquake3/ && chmod +x ./server_compile.sh && \
 
 # Copiar los archivos del juego.
 COPY ./baseq3 /ioquake3/ioquake3/baseq3
+
+# Copiar el script y los archivos de configuracion
+COPY start_server.sh /ioquake3/start_server.sh
+COPY server.cfg /ioquake3/server.cfg
+COPY levels.cfg /ioquake3/levels.cfg
 
 # Dejar el script para ejecutar el servidor como ejecutable.
 RUN chmod +x /ioquake3/start_server.sh
