@@ -36,6 +36,7 @@ RUN mkdir -p /ioquake3/ioquake3/config
 
 COPY server.cfg /ioquake3/ioquake3/config/server.cfg
 COPY levels.cfg /ioquake3/ioquake3/config/levels.cfg
+COPY bots.cfg /ioquake3/ioquake3/config/bots.cfg
 
 # Dejar el script para ejecutar el servidor como ejecutable.
 #RUN chmod +x /ioquake3/start_server.sh
