@@ -27,7 +27,7 @@ RUN cd /ioquake3/ && chmod +x ./server_compile.sh && \
 	yes | ./server_compile.sh
 
 # Copiar los archivos del juego.
-COPY ./baseq3 /ioquake3/ioquake3/baseq3
+#COPY ./baseq3 /ioquake3/ioquake3/baseq3
 
 # Copiar el script y los archivos de configuracion
 COPY start_server.sh /ioquake3/start_server.sh
